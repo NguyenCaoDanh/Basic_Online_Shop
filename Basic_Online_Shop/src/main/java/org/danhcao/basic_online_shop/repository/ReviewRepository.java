@@ -5,5 +5,5 @@ import org.danhcao.basic_online_shop.generic.IRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ReviewRepository extends IRepository<Review,Integer> {
+public interface ReviewRepository extends IRepository<Review, Integer> {
 }

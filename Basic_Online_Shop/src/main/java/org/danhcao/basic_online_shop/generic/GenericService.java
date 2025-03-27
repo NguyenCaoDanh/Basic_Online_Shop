@@ -113,9 +113,9 @@ public class GenericService {
     }
 
     // Inner class chứa thông tin file
-        @Getter
-        @Setter
-        public static final class FileData {
+    @Getter
+    @Setter
+    public static final class FileData {
         private final String mimeType;
         private final byte[] content;
         private final String fileName;

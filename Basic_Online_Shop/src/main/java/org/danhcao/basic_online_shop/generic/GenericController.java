@@ -1,9 +1,6 @@
 package org.danhcao.basic_online_shop.generic;
 
 
-
-
-
 import org.danhcao.basic_online_shop.dto.RequestResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

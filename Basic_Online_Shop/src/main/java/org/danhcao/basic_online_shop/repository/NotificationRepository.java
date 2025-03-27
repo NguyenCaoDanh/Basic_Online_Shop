@@ -5,5 +5,5 @@ import org.danhcao.basic_online_shop.generic.IRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface NotificationRepository extends IRepository<Notification,Integer> {
+public interface NotificationRepository extends IRepository<Notification, Integer> {
 }

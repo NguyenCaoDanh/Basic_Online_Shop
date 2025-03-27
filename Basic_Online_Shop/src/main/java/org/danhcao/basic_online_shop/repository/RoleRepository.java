@@ -6,6 +6,6 @@ import org.danhcao.basic_online_shop.generic.IRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoleRepository extends IRepository<Role,Integer> {
+public interface RoleRepository extends IRepository<Role, Integer> {
 
 }
