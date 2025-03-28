@@ -32,7 +32,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableMethodSecurity
 public class SercurityConfiguration {
 
-    private final ApiUrl apiUrl = new ApiUrl();
+
     @Autowired
     @Lazy // Tránh vấn đề vòng lặp phụ thuộc khi sử dụng `JwtFilter` và `AccountService`
     private JwtFilter jwtFilter;
@@ -53,11 +53,11 @@ public class SercurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable) // Vô hiệu hóa CSRF (sử dụng token để bảo mật thay thế)
                 .authorizeHttpRequests(auth -> auth
                                 // Cho phép truy cập không cần xác thực vào các URL dành cho anonymous
-                                .requestMatchers(apiUrl.urlAnonymous).permitAll()
+                                .requestMatchers(ApiUrl.URL_ANONYMOUS).permitAll()
                                 // Yêu cầu vai trò USER để truy cập các URL dành cho user
-                                .requestMatchers(apiUrl.urlUser).hasRole("USER")
+                                .requestMatchers(ApiUrl.URL_USER).hasRole("USER")
                                 // Yêu cầu vai trò ADMIN để truy cập các URL dành cho admin
-                                .requestMatchers(apiUrl.urlAdmin).hasRole("ADMIN")
+                                .requestMatchers(ApiUrl.URL_ADMIN).hasRole("ADMIN")
                                 .anyRequest().authenticated()  // Các request khác yêu cầu xác thực
                         // Các request khác cần xác thực (đăng nhập)
                 )

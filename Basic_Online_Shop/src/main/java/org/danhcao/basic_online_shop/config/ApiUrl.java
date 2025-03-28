@@ -1,24 +1,44 @@
 package org.danhcao.basic_online_shop.config;
 
 public class ApiUrl {
-    String[] urlAnonymous = {
-            "/api/account/change-password",      // Thay đổi mật khẩu
+    public static final String[] URL_ANONYMOUS = {
             "/api/account/register",
-            "/api/account/login",//Đăng nhập cho tất cả
-            "/api/account/forgot_password/**",//Quên mật khẩu
+            "/api/account/login",
+            "/api/account/change-password",
+            "/api/account/forgot_password/**",
             "/api/account/send-reset-token/**",
             "/api/account/reset-password",
 
+            "/api/banners/",
+            "/api/banners/{id}",
+
+            "/api/category",
+            "/api/category/{id}",
+
+            "/api/products",
+            "/api/products/{id}"
+
+
     };
-    String[] urlUser = {
+
+    public static final String[] URL_USER = {
             "api-example/user",
             "api-example/user1",
             "/api/account/change-password"
     };
-    String[] urlAdmin = {
+
+    public static final String[] URL_ADMIN = {
+            "/api/category/create",
+            "/api/category/update/**",
+            "/api/category/delete/**",
+
             "/api/banners/create",
-            "/api/banners/update",
-            "/api/banners/delete",
-            "/api/banners/**"
+            "/api/banners/update/**",
+            "/api/banners/delete/**",
+
+            "/api/products/create",
+            "/api/products/update/**",
+            "/api/products/delete/**",
     };
+
 }

@@ -63,6 +63,22 @@ public class GenericService {
         // Trả về đường dẫn tương đối của file
         return "/" + subDirectory + fileName;
     }
+    // Xóa file dựa trên đường dẫn tương đối
+    public void deleteFile(String link) {
+        // Lấy đường dẫn đầy đủ từ đường dẫn tương đối
+        Path filePath = getFullPathFromLink(link);
+
+        // Kiểm tra file có tồn tại không trước khi xóa
+        if (Files.exists(filePath)) {
+            try {
+                Files.delete(filePath);
+            } catch (IOException | java.io.IOException e) {
+                throw new ErrorHandler(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to delete file: " + e.getMessage());
+            }
+        } else {
+            throw new ErrorHandler(HttpStatus.NOT_FOUND, "File not found");
+        }
+    }
 
     // Xác thực mật khẩu dựa trên các quy tắc bảo mật
     public void validatePassword(String password) {
