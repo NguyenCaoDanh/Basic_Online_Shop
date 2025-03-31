@@ -2,6 +2,7 @@ package org.danhcao.basic_online_shop.config;
 
 public class ApiUrl {
     public static final String[] URL_ANONYMOUS = {
+
             "/api/account/register",
             "/api/account/login",
             "/api/account/change-password",
@@ -16,7 +17,9 @@ public class ApiUrl {
             "/api/category/{id}",
 
             "/api/products",
-            "/api/products/{id}"
+            "/api/products/{id}",
+
+            "/api/files/**"
 
 
     };

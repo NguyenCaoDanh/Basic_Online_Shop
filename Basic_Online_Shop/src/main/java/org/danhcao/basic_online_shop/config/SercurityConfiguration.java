@@ -130,8 +130,8 @@ public class SercurityConfiguration {
     public class WebConfig implements WebMvcConfigurer {
         @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/images/**") // Đường dẫn API để truy cập ảnh
-                    .addResourceLocations("classpath:/static/images/"); // Nơi lưu trữ file ảnh trong dự án
+            registry.addResourceHandler("/products/**") // Ảnh sản phẩm
+                    .addResourceLocations("classpath:/static/products/");
         }
     }
 
